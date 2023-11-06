@@ -5,9 +5,12 @@ var Tower = [list:
     ,circle(90, "solid", "aqua")],
   [list: ],
   [list: ]]
+#Creates a variable that containes all the circles in the hanoi tower using lists
 
 fun move(From :: Number, To :: Number):
+#A move function that takes in the place you want to move a circle from and the place you want to move it to
   if (Tower.get(From - 1) == empty): raise("Not a valid move")
+#This line checks if the pin has a circle, if there is none it returnes a error message
   else:
     f = Tower.get(From - 1).first #Den øverste ringen
     r = Tower.get(From - 1).rest #Resten av ringene
