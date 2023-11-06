@@ -36,9 +36,12 @@ fun Stacking(x, y):
   overlay(x,y)
   end
 #Function to stack the circles on a pin
-pin1 = fold(Stacking, circle(5,"solid","black"), Tower.get(0))
-pin2 = fold(Stacking, circle(5,"solid","black"), Tower.get(1))
-pin3 = fold(Stacking, circle(5,"solid","black"), Tower.get(2))
-#Creating the three different pins
-beside(beside(pin1, pin2), pin3)
-#Puts the pins besides eachother
+
+fun print-tower():
+#Function to print the pins and circles
+  pin1 = fold(Stacking, circle(5,"solid","black"), Tower.get(0))
+  pin2 = fold(Stacking, circle(5,"solid","black"), Tower.get(1))
+  pin3 = fold(Stacking, circle(5,"solid","black"), Tower.get(2))
+  print(beside(beside(pin1, pin2), pin3))
+#Stacks the pins besides eachother and prints them out
+end
