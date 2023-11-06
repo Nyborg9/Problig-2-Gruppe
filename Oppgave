@@ -13,7 +13,6 @@ fun move(From :: Number, To :: Number):
     r = Tower.get(From - 1).rest #Resten av ringene
     step = Tower.set(From - 1, r) 
     step.set(To - 1, link(f, step.get(To - 1)))
-    
   end
 end
 
@@ -24,16 +23,13 @@ end
 hanoi(1, 2)
 hanoi(1, 2)
 
-Tower
 
-#overlay(overlay(overlay(hanoi-board.get(0).get(0),hanoi-board.get(0).get(1)), hanoi-board.get(0).get(2)), hanoi-board.get(0).get(3)) 
-
-fun draw-overlay(acc, elt):
- overlay(acc,elt)
+fun Stacking(x, y):
+  overlay(x,y)
   end
 
-pin1 = fold(draw-overlay, circle(5,"solid","black"), Tower.get(0))
-pin2 = fold(draw-overlay, circle(5,"solid","black"), Tower.get(1))
-pin3 = fold(draw-overlay, circle(5,"solid","black"), Tower.get(2))
+pin1 = fold(Stacking, circle(5,"solid","black"), Tower.get(0))
+pin2 = fold(Stacking, circle(5,"solid","black"), Tower.get(1))
+pin3 = fold(Stacking, circle(5,"solid","black"), Tower.get(2))
 
 beside(beside(pin1, pin2), pin3)
