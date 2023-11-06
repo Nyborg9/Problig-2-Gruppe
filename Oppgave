@@ -5,7 +5,7 @@ var Tower = [list:
     ,circle(90, "solid", "aqua")],
   [list: ],
   [list: ]]
-#Creates a variable that containes all the circles in the hanoi tower using lists
+#Creates a mutable variable that containes all the circles in the hanoi tower using lists
 
 fun move(From :: Number, To :: Number):
 #A move function that takes in the place you want to move a circle from and the place you want to move it to
@@ -14,25 +14,31 @@ fun move(From :: Number, To :: Number):
   else:
     f = Tower.get(From - 1).first #Den øverste ringen
     r = Tower.get(From - 1).rest #Resten av ringene
+    #f is the first ring on the pin f for first and r is the rest of the pins r for rest
     step = Tower.set(From - 1, r) 
+    #This step sets all the remaining circles back to the original pin
     step.set(To - 1, link(f, step.get(To - 1)))
+    #This moves the first circle to the desired pin
   end
 end
 
 fun hanoi(From :: Number, To :: Number):
+#This comand is used to play and save the Hanoi Tower
   Tower := move(From, To)
+  #This changes the variable Tower to the new tower
 end
 
 hanoi(1, 2)
 hanoi(1, 2)
-
+#This plays a move
 
 fun Stacking(x, y):
   overlay(x,y)
   end
-
+#Function to stack the circles on a pin
 pin1 = fold(Stacking, circle(5,"solid","black"), Tower.get(0))
 pin2 = fold(Stacking, circle(5,"solid","black"), Tower.get(1))
 pin3 = fold(Stacking, circle(5,"solid","black"), Tower.get(2))
-
+#Creating the three different pins
 beside(beside(pin1, pin2), pin3)
+#Puts the pins besides eachother
