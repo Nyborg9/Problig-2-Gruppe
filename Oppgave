@@ -6,19 +6,19 @@ var Tower = [list:
   [list: ],
   [list: ]]
 
-fun move(fra :: Number, til :: Number):
-  # fra er 1 og til er 3 
-  if (Tower.get(fra - 1) == empty): raise("Illegal move")
+fun move(From :: Number, To :: Number):
+  if (Tower.get(From - 1) == empty): raise("Not a valid move")
   else:
-    f = Tower.get(fra - 1).first # grønn
-    r = Tower.get(fra - 1).rest # uten grønn
-    step = Tower.set(fra - 1, r) 
-    step.set(til - 1, link(f, step.get(til - 1)))
+    f = Tower.get(From - 1).first #Den øverste ringen
+    r = Tower.get(From - 1).rest #
+    step = Tower.set(From - 1, r) 
+    step.set(To - 1, link(f, step.get(To - 1)))
   end
 end
 
 var NewTower = move(1, 3)
-NewTower
+Tower := NewTower
+Tower
 
 #overlay(overlay(overlay(hanoi-board.get(0).get(0),hanoi-board.get(0).get(1)), hanoi-board.get(0).get(2)), hanoi-board.get(0).get(3)) 
 
