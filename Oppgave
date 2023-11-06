@@ -28,10 +28,6 @@ fun hanoi(From :: Number, To :: Number):
   #This changes the variable Tower to the new tower
 end
 
-hanoi(1, 2)
-hanoi(1, 2)
-#This plays a move
-
 fun Stacking(x, y):
   overlay(x,y)
   end
@@ -45,3 +41,4 @@ fun print-tower():
   print(beside(beside(pin1, pin2), pin3))
 #Stacks the pins besides eachother and prints them out
 end
+#You can play this game by writing hanoi("The pin you want to move it from", "The pin you want to move it to") in the console and to show the result you can write print-tower() in the console
