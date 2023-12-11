@@ -22,7 +22,7 @@ fun move(From :: Number, To :: Number):
   end
 end
 
-fun hanoi(From :: Number, To :: Number):
+fun place(From :: Number, To :: Number):
 #This comand is used to play and save the Hanoi Tower
   Tower := move(From, To)
   #This changes the variable Tower to the new tower
@@ -33,7 +33,7 @@ fun Stacking(x, y):
   end
 #Function to stack the circles on a pin
 
-fun print-tower():
+fun play(x):
 #Function to print the pins and circles
   pin1 = fold(Stacking, circle(5,"solid","black"), Tower.get(0))
   pin2 = fold(Stacking, circle(5,"solid","black"), Tower.get(1))
@@ -42,3 +42,6 @@ fun print-tower():
 #Stacks the pins besides eachother and prints them out
 end
 #You can play this game by writing hanoi("The pin you want to move it from", "The pin you want to move it to") in the console and to show the result you can write print-tower() in the console
+Text = 'Use the functions play(place(From, To)) to play. From and To has to be numbers'
+play(0)
+print(Text)
